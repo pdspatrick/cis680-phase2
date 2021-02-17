@@ -1,0 +1,7 @@
+.LOG
+
+
+4:26 PM 2/17/2021 - 2 hours
+
+Starting this a bit later than I wanted to. Problems with IntelliJ after a recent windows update - solution was at https://youtrack.jetbrains.com/issue/IDEA-238995 and involved abusing WinSock due to a change in HyperV (lolwut?). Why is windows TCP/IP still based on WinSock from Windows 95?
+Also created the base templates in IntelliJ and uploaded to GitHub.
