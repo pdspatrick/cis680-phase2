@@ -1,0 +1,12 @@
+<TextField fx:id="yearlyContrib" promptText="Taxable Contribution %" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+<NumberTextField fx:id="yearlyNontaxableContrib" promptText="Nontaxable Contribution %" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+<NumberTextField fx:id="currentSavings" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+<NumberTextField fx:id="currentIncome" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+<TextField fx:id="incomeRise" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+<NumberTextField fx:id="rateOfReturn" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+<NumberTextField fx:id="rateOfRetirementReturn" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+<NumberTextField fx:id="rateOfInflation" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+<IntTextField fx:id="age" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+<IntTextField fx:id="retirementAge" promptText="Age of Retirement" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+<NumberTextField fx:id="desiredIncome" promptText="Retirement Income Target" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+<NumberTextField fx:id="age80Income" GridPane.columnIndex="1" GridPane.rowIndex="16" />

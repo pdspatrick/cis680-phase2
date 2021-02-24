@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!--<?import RetirementCalculator.NumberTextField?>
+<?import RetirementCalculator.IntTextField?>-->
+
+<AnchorPane prefHeight="606.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RetirementCalculator.Controller">
+
+	<children>
+		<HBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"> 
+			<children>
+				<VBox prefHeight="634.0" prefWidth="630.0"> 
+					<children>
+						<GridPane fx:id="inputArea"> 
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="182.0" /> 
+							</columnConstraints>
+							<columnConstraints>
+								<ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="162.0" />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints /> 
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" /> 
+							</rowConstraints>
+							<rowConstraints>
+								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints /> 
+							</rowConstraints>
+							<children>
+								<TextField fx:id="clientName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<TextField fx:id="scenarioName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<Label text="Scenario Color" GridPane.rowIndex="3" />
+								<ChoiceBox fx:id="scenarioColor" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+									<items>
+										<FXCollections fx:factory="observableArrayList">
+											<String fx:value="Red" />
+											<String fx:value="Blue" />
+											<String fx:value="Green" />
+											<String fx:value="Orange" />
+											<String fx:value="Black" />
+										</FXCollections>
+									</items>
+								</ChoiceBox>
+
+								<TextField fx:id="yearlyContrib" promptText="Enter in format .02" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+								<TextField fx:id="yearlyNontaxableContrib" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+								<TextField fx:id="currentSavings" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+								<TextField fx:id="currentIncome" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+								<TextField fx:id="incomeRise" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+								<TextField fx:id="rateOfReturn" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+								<TextField fx:id="rateOfRetirementReturn" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+								<TextField fx:id="rateOfInflation" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+								<TextField fx:id="age" promptText="Current Age" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+								<TextField fx:id="retirementAge" promptText="Age of Retirement" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+								<TextField fx:id="desiredIncome" promptText="Retirement Income Target" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+								<TextField fx:id="age80Income" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+
+								<Label text="Taxable Contributions (%/yr)" GridPane.rowIndex="5" /> 
+								<Label text="Nontaxable Contributions (%/yr)" GridPane.rowIndex="6" /> 
+								<Label text="Current Retirement Savings" GridPane.rowIndex="7" /> 
+								<Label text="Current Income" GridPane.rowIndex="8" /> 
+								<Label text="Rate of Return (pre-retirement)" GridPane.rowIndex="10" /> 
+								<Label text="Rate of Return (after retirement)" GridPane.rowIndex="11" /> 
+								<Label text="Rate of Inflation" GridPane.rowIndex="12" />
+								<Label text="Desired Income at age 80+" GridPane.rowIndex="16" /> 
+								<Label text="Desired Yearly Retirement Income" GridPane.rowIndex="15" /> 
+
+
+
+
+								<Label text="Desired age of Retirement" GridPane.rowIndex="14" /> 
+								<Label text="Scenario Name" GridPane.rowIndex="2" /> 
+								<Label text="Client Name" GridPane.rowIndex="1" /> 
+
+								<Label alignment="CENTER" text="Donut Retirement Calculator" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER"> 
+									<font>
+										<Font name="System Bold" size="16.0" /> 
+									</font>
+								</Label>
+
+								<Label text="Rate of Income Rise:" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+
+								<Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#dataSubmit" text="Calculate Values" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="18" />
+								<Button mnemonicParsing="false" text="Clear Data" GridPane.halignment="LEFT" GridPane.rowIndex="18" />
+                        <Label text="Current Age" GridPane.rowIndex="13" />
+							</children>
+						</GridPane>
+						<TableView fx:id="dataTable" prefHeight="200.0" prefWidth="200.0"> 
+							<columns>
+								<TableColumn fx:id="tablePlanName" editable="false" prefWidth="93.0" text="Plan Name" />
+							</columns>
+							<columns>
+								<TableColumn fx:id="tableClientName" editable="false" prefWidth="83.0" text="Client Name" /> 
+							</columns>
+							<columns>
+								<TableColumn fx:id="tableTotalSavings" editable="false" prefWidth="87.0" text="Total Savings" /> 
+							</columns>
+							<columns>
+								<TableColumn fx:id="tableScenarioColor" editable="false" prefWidth="75.0" text="Chart Color" />
+							</columns>
+						</TableView>
+					</children>
+				</VBox>
+				<VBox prefHeight="475.0" prefWidth="718.0"> 
+					<children>
+						<LineChart title="Yearly Retirement Income"> 
+							<xAxis>
+								<CategoryAxis label="Age" side="BOTTOM" /> 
+							</xAxis>
+							<yAxis>
+								<NumberAxis forceZeroInRange="false" side="LEFT" /> 
+							</yAxis>
+						</LineChart>
+						<LineChart title="Size of Retirement Savings"> 
+							<xAxis>
+								<CategoryAxis label="Age" side="BOTTOM" /> 
+							</xAxis>
+							<yAxis>
+								<NumberAxis side="LEFT" /> 
+							</yAxis>
+						</LineChart>
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</children>
+</AnchorPane>

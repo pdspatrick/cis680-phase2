@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="formsfx-core-11.4.1-javadoc">
+    <CLASSES />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/depends/formsfx-core-11.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
