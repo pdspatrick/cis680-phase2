@@ -13,3 +13,6 @@ Frustrations with getting JavaFX (my chosen UI framework) to work in IntelliJ. I
 GOt code to compile, and managed to get the UI to execute code. It seems to hang somewhere and start eating tons of memory, I assume I screwed up something in either calculation or compiling the list. Hard stuff seems to be done though. Juist need to worry about storing the data, fixing calc issues, and rendering the charts
 
 
+
+6:57 PM 2/24/2021 - 5 hours
+Holy crap I got the graphing working somehow. Feeling much better about everything now. Gonna do a committ so I have a good point in time to go back to if I screw things up, because the calculations are wayyyyy off.

@@ -26,6 +26,8 @@
                         <ColumnConstraints />
                         <ColumnConstraints />
                         <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
                         <ColumnConstraints /> 
 							</columnConstraints>
 							<rowConstraints>
@@ -87,6 +89,44 @@
 							</rowConstraints>
 							<rowConstraints>
 								<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
                         <RowConstraints />
                         <RowConstraints />
                         <RowConstraints />
@@ -231,32 +271,41 @@
 								<TableColumn fx:id="tableClientName" editable="false" prefWidth="83.0" text="Client Name" /> 
 							</columns>
 							<columns>
-								<TableColumn fx:id="tableTotalSavings" editable="false" prefWidth="87.0" text="Total Savings" /> 
+								<TableColumn fx:id="enoughMoney" editable="false" prefWidth="87.0" text="Enough?" />
 							</columns>
 							<columns>
-								<TableColumn fx:id="tableScenarioColor" editable="false" prefWidth="75.0" text="Chart Color" />
+								<TableColumn fx:id="tableScenarioColor" editable="false" prefWidth="75.0" text="Color" />
 							</columns>
 						</TableView>
 					</children>
 				</VBox>
 				<VBox prefHeight="475.0" prefWidth="718.0"> 
 					<children>
-						<LineChart title="Yearly Retirement Income"> 
+						<LineChart fx:id="plansChart" title="Size of Retirement Savings"> 
 							<xAxis>
-								<CategoryAxis label="Age" side="BOTTOM" /> 
-							</xAxis>
-							<yAxis>
-								<NumberAxis forceZeroInRange="false" side="LEFT" /> 
-							</yAxis>
-						</LineChart>
-						<LineChart title="Size of Retirement Savings"> 
-							<xAxis>
-								<CategoryAxis label="Age" side="BOTTOM" /> 
+								<NumberAxis label="Age" side="BOTTOM" />
 							</xAxis>
 							<yAxis>
 								<NumberAxis side="LEFT" /> 
 							</yAxis>
 						</LineChart>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Peak Savings" />
+                        <Label text="Label" GridPane.rowIndex="1" />
+                        <Label text="Label" GridPane.rowIndex="2" />
+                        <Label fx:id="peakSavingText" text="peakSaved" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                     </children>
+                  </GridPane>
 					</children>
 				</VBox>
 			</children>

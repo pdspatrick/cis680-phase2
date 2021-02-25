@@ -61,6 +61,7 @@ public class Main extends Application {
         inputVars.add(11,Double.parseDouble(desiredIncome));
         inputVars.add(12,Double.parseDouble(age80Income));
         inputVars.add(13,yearsUntilRetirement);
+        var peakSavings = (Double) 0.0;
 
         output.add(0, inputVars);
         var incomeRisePlus1 = Double.parseDouble(incomeRise) + 1;
@@ -78,9 +79,10 @@ public class Main extends Application {
                 salary = salary * incomeRisePlus1;
                 totalSavings = totalSavings * savingsRisePlus1;
                 currentAge++;
-                print(currentAge);
+                //System.out.println(currentAge + " in year " + i + " of preretirement");
             }
             totalSavings = totalSavings + (salary * contributionPlus1);
+            if (totalSavings > peakSavings) peakSavings = totalSavings;
             var liss = List.of(currentAge, totalSavings);
             output.add(liss);
             if(i == yearsUntilRetirement - 1){
@@ -91,7 +93,7 @@ public class Main extends Application {
             totalSavings = totalSavings * retirementRatePlus1;
             totalSavings = totalSavings - activeIncome;
             currentAge++;
-            print(currentAge);
+            //System.out.println(currentAge + " in year " + i + " of retirement");
             var liss = List.of(currentAge, totalSavings);
             output.add(liss);
             if (i == activeRetirementYears - 1){
@@ -99,11 +101,11 @@ public class Main extends Application {
                 inputVars.add(17, currentAge);
             }
             }
-        for (int i = 0; i < 21;){
+        for (int i = 0; i < 21; i++){
             totalSavings = totalSavings * retirementRatePlus1;
             totalSavings = totalSavings - plus80income;
             currentAge++;
-            print(currentAge);
+            //System.out.println(currentAge + " in year " + i + " of late retirement");
             var liss = List.of(currentAge, totalSavings);
             output.add(liss);
             if (i == 20){
@@ -111,6 +113,8 @@ public class Main extends Application {
                 inputVars.add(19, currentAge);
             }
         }
+        if (totalSavings > 0) inputVars.add(20, "Yes");
+        else inputVars.add(20,"No");
         output.set(0, inputVars);
 
         return output;

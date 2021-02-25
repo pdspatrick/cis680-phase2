@@ -8,41 +8,53 @@ import javafx.collections.ObservableList;
 import java.util.List;
 
 public class RetirementPlan {
-    public static SimpleStringProperty plnName;
-    public static SimpleStringProperty clntName;
-    public static SimpleStringProperty scnColor;
-    public static SimpleListProperty fulllist;
+    public static SimpleStringProperty planName;
+    public static SimpleStringProperty clientName;
+    public static SimpleStringProperty color;
+    public static SimpleListProperty plan;
     public static List listyboi;
     public static String plnNameStr;
     public static String clntNameStr;
     public static String scnColorStr;
+    public static SimpleStringProperty enoughMoney;
+    public static List varList;
 
-    RetirementPlan(String planname, String clientname, String color, List planList){
-        plnName = new SimpleStringProperty(planname);
-        clntName = new SimpleStringProperty(clientname);
-        scnColor = new SimpleStringProperty(color);
-        fulllist = new SimpleListProperty((ObservableList) planList);
+    public RetirementPlan(String planname, String clientname, String colour, List planList){
+        varList = (List) planList.get(0);
+        planName = new SimpleStringProperty(planname);
+        clientName = new SimpleStringProperty(clientname);
+        color = new SimpleStringProperty(colour);
+        var planlistobs = FXCollections.observableArrayList();
+        planlistobs.addAll(planList);
+        plan = new SimpleListProperty(planlistobs);
         listyboi = planList;
         plnNameStr = planname;
         clntNameStr = clientname;
-        scnColorStr = color;
+        scnColorStr = colour;
+        enoughMoney = new SimpleStringProperty((String) varList.get(20));
+
 
     }
 
-    public String getPlanName(){
-        return plnName.get();
+    public static String getPlanName(){
+        return planName.get();
     }
-    public String getCLientName(){
-        return clntName.get();
+    public static String getClientName(){
+        return clientName.get();
     }
-    public String getColor(){
-        return scnColor.get();
+    public static String getColor(){
+        return color.get();
     }
-    public List getPlan(){
+    public ObservableList getPlan(){
+        return plan.get();
+    }
+    public List getPlainList(){
         return listyboi;
     }
-    public ObservableList getObsList(){
-        return fulllist;
-    }
+    public String getTablePlanName() {return planName.get();}
+    public String getTableClientName() {return clientName.get();}
+    public String getTableScenarioColor() {return color.get();}
+    public String getEnoughMoney(){return enoughMoney.get();}
+    public Integer getPlanLength(){return listyboi.size()-1;}
 }
 
