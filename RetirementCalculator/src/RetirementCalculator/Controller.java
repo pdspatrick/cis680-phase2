@@ -2,10 +2,12 @@ package RetirementCalculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
 
@@ -43,8 +45,6 @@ public class Controller {
     @FXML
     private TextField clientName;
     @FXML
-    private Label peakSavingText;
-    @FXML
     private TextField scenarioName;
     @FXML
     private ChoiceBox<?> scenarioColor;
@@ -53,7 +53,7 @@ public class Controller {
     @FXML
     private TableView<RetirementPlan> dataTable;
     @FXML
-    public TableColumn<RetirementPlan, String> tableScenarioColor;
+    public TableColumn<RetirementPlan, String> tablePeakSavings;
     @FXML
     public TableColumn<RetirementPlan, String> tablePlanName;
     @FXML
@@ -62,40 +62,61 @@ public class Controller {
     private LineChart plansChart;
     @FXML
     protected TableColumn<RetirementPlan, String> tableClientName;
+    @FXML
+    protected Label remainBalText;
+    @FXML
+    protected Label peakSavingText;
+    @FXML
+    protected Label planNameText;
+    @FXML
+    protected Label clientNameText;
+    @FXML
+    protected LineChart yearlyIncomeChart;
     public void dataSubmit(ActionEvent actionEvent) {
         var dataset = dataInput(clientName.getText(),
                 scenarioName.getText(),
-                scenarioColor.getSelectionModel().getSelectedItem().toString(),
-                yearlyContrib.getText(),
-                currentSavings.getText(),
-                currentIncome.getText(),
-                incomeRise.getText(),
-                rateOfReturn.getText(),
-                rateOfRetirementReturn.getText(),
-                age.getText(),
-                retirementAge.getText(),
-                desiredIncome.getText(),
-                age80Income.getText());
-        var plan = new RetirementPlan(scenarioName.getText(), clientName.getText(), scenarioColor.getSelectionModel().getSelectedItem().toString(), dataset);
-        tablePlanName.setCellValueFactory(new PropertyValueFactory<RetirementPlan, String>("tablePlanName"));
-        tableClientName.setCellValueFactory(new PropertyValueFactory<RetirementPlan, String>("tableClientName"));
-        tableScenarioColor.setCellValueFactory(new PropertyValueFactory<RetirementPlan, String>("tableScenarioColor"));
-        enoughMoney.setCellValueFactory(new PropertyValueFactory<RetirementPlan, String>("enoughMoney"));
-        Main.savedData.add(Main.savedData.size(), plan);
-        dataTable.setItems(Main.savedData);
+                checkForNull(yearlyContrib.getText()),
+                checkForNull(currentSavings.getText()),
+                checkForNull(currentIncome.getText()),
+                checkForNull(incomeRise.getText()),
+                checkForNull(rateOfReturn.getText()),
+                checkForNull(rateOfRetirementReturn.getText()),
+                checkForNull(age.getText()),
+                checkForNull(retirementAge.getText()),
+                checkForNull(desiredIncome.getText()),
+                checkForNull(age80Income.getText()),
+                checkForNull(rateOfInflation.getText()));
+        var plan = new RetirementPlan(scenarioName.getText(), clientName.getText(), dataset);
         XYChart.Series dataplot = new XYChart.Series();
         dataplot.setName(plan.getTablePlanName());
+        XYChart.Series dataplot2 = new XYChart.Series();
+        dataplot2.setName(plan.getTablePlanName());
         for (int i = 1; i < plan.getPlanLength() + 1; i++){
             var current = (List) dataset.get(i);
             dataplot.getData().add(new XYChart.Data(current.get(0), current.get(1)));
+            dataplot2.getData().add(new XYChart.Data(current.get(0), current.get(2)));
         }
         plansChart.getData().add(dataplot);
+        yearlyIncomeChart.getData().add(dataplot2);
+
 
     }
 
-    public void dataUpdate(ActionEvent actionEvent){
-        return;
+    public void dataUpdate(MouseEvent actionEvent){
+        var selected = dataTable.getSelectionModel().getSelectedIndex();
+        var inputVars = Main.savedData.get(selected).getVarList();
+        remainBalText.setText(inputVars.get(22).toString());
+        peakSavingText.setText(inputVars.get(21).toString());
+        planNameText.setText(inputVars.get(1).toString());
+        clientNameText.setText(inputVars.get(0).toString());
     }
+    public static String checkForNull(String input){
+        if (input.isBlank()) return "0";
+        if (input.isEmpty()) return "0";
+        return input.toString();
+    }
+
+
 
 }
 

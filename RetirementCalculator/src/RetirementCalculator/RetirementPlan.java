@@ -1,5 +1,6 @@
 package RetirementCalculator;
 
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -18,21 +19,26 @@ public class RetirementPlan {
     public static String scnColorStr;
     public static SimpleStringProperty enoughMoney;
     public static List varList;
+    public static Double peakSavingsRaw;
+    public static Double remainBalRaw;
+    public static SimpleDoubleProperty peakSavings;
+    public static SimpleDoubleProperty remainBal;
 
-    public RetirementPlan(String planname, String clientname, String colour, List planList){
+    public RetirementPlan(String planname, String clientname, List planList){
         varList = (List) planList.get(0);
         planName = new SimpleStringProperty(planname);
         clientName = new SimpleStringProperty(clientname);
-        color = new SimpleStringProperty(colour);
         var planlistobs = FXCollections.observableArrayList();
         planlistobs.addAll(planList);
         plan = new SimpleListProperty(planlistobs);
         listyboi = planList;
         plnNameStr = planname;
         clntNameStr = clientname;
-        scnColorStr = colour;
         enoughMoney = new SimpleStringProperty((String) varList.get(20));
-
+        peakSavingsRaw = Main.round((Double) varList.get(21), 2);
+        peakSavings = new SimpleDoubleProperty(peakSavingsRaw);
+        remainBalRaw  = Main.round((Double) varList.get(22), 2);
+        remainBal = new SimpleDoubleProperty(remainBalRaw);
 
     }
 
@@ -56,5 +62,8 @@ public class RetirementPlan {
     public String getTableScenarioColor() {return color.get();}
     public String getEnoughMoney(){return enoughMoney.get();}
     public Integer getPlanLength(){return listyboi.size()-1;}
+    public Double getTablePeakSavings(){return peakSavings.get();}
+    public Double getRemainBal(){return remainBal.get();}
+    public List getVarList(){return varList;}
 }
 
