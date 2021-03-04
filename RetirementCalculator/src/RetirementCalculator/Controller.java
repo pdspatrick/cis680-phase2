@@ -71,6 +71,8 @@ public class Controller {
     @FXML
     protected Label clientNameText;
     @FXML
+    protected Label enoughSaved;
+    @FXML
     protected LineChart yearlyIncomeChart;
     public void dataSubmit(ActionEvent actionEvent) {
         var dataset = dataInput(clientName.getText(),
@@ -98,6 +100,11 @@ public class Controller {
         }
         plansChart.getData().add(dataplot);
         yearlyIncomeChart.getData().add(dataplot2);
+        planNameText.setText(plan.getTablePlanName());
+        clientNameText.setText(plan.getTableClientName());
+        peakSavingText.setText(plan.getTablePeakSavings().toString());
+        remainBalText.setText(plan.getRemainBal().toString());
+        enoughSaved.setText(plan.getEnoughMoney());
 
 
     }

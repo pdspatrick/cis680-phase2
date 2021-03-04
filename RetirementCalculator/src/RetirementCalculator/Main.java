@@ -50,6 +50,9 @@ public class Main extends Application {
         List output = new ArrayList();
         List inputVars = new ArrayList(); //storing the variables used to create the calculations here, which will become output[0]
         Integer yearsUntilRetirement = Integer.parseInt(retirementAge) - Integer.parseInt(age);
+        if (currentSavings.isEmpty()){
+            currentSavings = "0.0";
+        }
         inputVars.add(0,clientName);
         inputVars.add(1,scenarioName);
         inputVars.add(2,inflationRate);
@@ -67,6 +70,7 @@ public class Main extends Application {
         var peakSavings = (Double) 0.0;
 
         output.add(0, inputVars);
+        var currentSaved = Double.parseDouble(currentSavings);
         var incomeRisePlus1 = checkPercent(Double.parseDouble(incomeRise));
         var savingsRisePlus1 = checkPercent(Double.parseDouble(rateOfReturn));
         var retirementRatePlus1 = checkPercent(Double.parseDouble(rateOfRetirementReturn));
